@@ -1,4 +1,4 @@
-<h1> Pivotal Assignment - Created by pas Apicella </h1>
+<h1> Pivotal Assignment - Created by Pas Apicella </h1>
 
 The following demo is a java based web application which binds to a MySQL database instance. It returns hello 
 world plus a default web page and some rest end points as described below.
