@@ -9,16 +9,18 @@ Access as follows
 http://pas-assignment.cfapps.io/
 ```
 
+- Default web page as follows 
+
 ![alt tag](https://dl.dropboxusercontent.com/u/15829935/pivotal-assignment.png)
 
-Rest Endpoints for Hello World
+- Rest Endpoint for Hello World
 
 ```
 pasapicella@Pas-MacBook-Pro:~$ curl http://pas-assignment.cfapps.io/hello
 Hello World!!!!
 ```
 
-Rest Endpoint for data bound customer access
+- Rest Endpoint for data bound customer access to MySQL service
 
 ```
 pasapicella@Pas-MacBook-Pro:~$ curl http://pas-assignment.cfapps.io/allcustomers
@@ -38,6 +40,59 @@ Connected, dumping recent logs for app pas-assignment in org apples-org / space 
 2015-12-24T12:03:03.74+1100 [STG/0]      OUT Successfully created container
 
 ....
+
+```
+
+MySQL database service is being used bound using Spring Boot 
+
+```
+pasapicella@Pas-MacBook-Pro:~$ cf services
+Getting services in org apples-org / space development as lucia78@tpg.com.au...
+OK
+
+name           service   plan    bound apps       last operation
+apples-mysql   cleardb   spark   pas-assignment   create succeeded
+
+
+Bound using VCAP_SERVICES
+
+pasapicella@Pas-MacBook-Pro:~$ cf env pas-assignment
+Getting env variables for app pas-assignment in org apples-org / space development as lucia78@tpg.com.au...
+OK
+
+System-Provided:
+{
+ "VCAP_SERVICES": {
+  "cleardb": [
+   {
+    "credentials": {
+     "hostname": "us-cdbr-iron-east-03.cleardb.net",
+     "jdbcUrl": "jdbc:mysql://us-cdbr-iron-east-03.cleardb.net/ad_3b9958cd039b7c5?user=b26fcdb56dea7d\u0026password=61900920",
+     "name": "ad_3b9958cd039b7c5",
+     "password": "61900920",
+     "port": "3306",
+     "uri": "mysql://b26fcdb56dea7d:61900920@us-cdbr-iron-east-03.cleardb.net:3306/ad_3b9958cd039b7c5?reconnect=true",
+     "username": "b26fcdb56dea7d"
+    },
+    "label": "cleardb",
+    "name": "apples-mysql",
+    "plan": "spark",
+    "tags": [
+     "Data Stores",
+     "Cloud Databases",
+     "Developer Tools",
+     "Web-based",
+     "Data Store",
+     "Single Sign-On",
+     "Buyable",
+     "relational",
+     "mysql",
+     "Certified Applications"
+    ]
+   }
+  ]
+ }
+}
 
 ```
 
