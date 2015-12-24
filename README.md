@@ -43,7 +43,7 @@ Connected, dumping recent logs for app pas-assignment in org apples-org / space 
 
 ```
 
-MySQL database service is being used bound using Spring Boot 
+- MySQL database service is being used bound using Spring Boot 
 
 ```
 pasapicella@Pas-MacBook-Pro:~$ cf services
@@ -96,7 +96,7 @@ System-Provided:
 
 ```
 
-Scale Application from CLI as follows [Must be logged in from command line]
+- Scale Application from CLI as follows [Must be logged in from command line]
 
 ```
 pasapicella@Pas-MacBook-Pro:~$ cf scale pas-assignment -i 2
