@@ -3,7 +3,7 @@
 The following demo is a java based web application which binds to a MySQL database instance. It returns hello 
 world plus a default web page and some rest end points as described below.
 
-Access as follows
+- Access as follows
 
 ```
 http://pas-assignment.cfapps.io/
@@ -13,6 +13,25 @@ http://pas-assignment.cfapps.io/
 
 ![alt tag](https://dl.dropboxusercontent.com/u/15829935/pivotal-assignment.png)
 
+- How was the application deployed from CF CLI
+
+```
+I used a manifest.yml file as follows, using a unique name
+
+applications:
+- name: pas-assignment
+  memory: 512M
+  instances: 1
+  host: pas-assignment
+  path: ./target/PivotalHomeworkApp-0.0.1-SNAPSHOT.jar
+  services:
+   - apples-mysql
+   
+Deployed as follows
+
+$ cf push -f manifest.yml
+
+```
 - Rest Endpoint for Hello World
 
 ```
